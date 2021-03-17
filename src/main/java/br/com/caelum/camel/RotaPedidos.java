@@ -19,8 +19,10 @@ public class RotaPedidos {
 				from("file:pedidos?delay=5s&noop=true").
 				routeId("rota-pedidos").
 				multicast().
-					to("direct:soap").
-					to("direct:http");
+						parallelProcessing().
+							timeout(500). //millis
+								to("direct:soap").
+								to("direct:http");
 
 				from("direct:http").
 						routeId("rota-http").
