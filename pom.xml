@@ -99,8 +99,6 @@
 
 	</dependencies>
 
-
-
 	<build>
 		<finalName>projeto-camel-alura</finalName>
 		<plugins>
